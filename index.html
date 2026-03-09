@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Живая Земля — от космоса до 1 метра</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="hud">
+      <h1>Живая Земля</h1>
+      <p>Масштаб: <strong id="distanceLabel">—</strong></p>
+      <p>Режим детализации: <strong id="lodLabel">—</strong></p>
+      <p id="focusLabel">Фокус: планета целиком</p>
+      <p class="hint">
+        Колесо мыши — приближение, ЛКМ + движение — вращение, ПКМ + движение — сдвиг,
+        клик по поверхности — фокус на регионе.
+      </p>
+    </div>
+
+    <div id="controlsPanel">
+      <h2>Управление</h2>
+      <div class="searchRow">
+        <input id="searchInput" list="locationList" placeholder="Поиск: Москва, Amazon Rainforest..." />
+        <datalist id="locationList"></datalist>
+        <button id="searchButton">Найти</button>
+      </div>
+
+      <div class="controlsGrid">
+        <button data-action="zoomIn">+</button>
+        <button data-action="panUp">↑</button>
+        <button data-action="zoomOut">−</button>
+        <button data-action="panLeft">←</button>
+        <button data-action="reset">Центр</button>
+        <button data-action="panRight">→</button>
+        <span></span>
+        <button data-action="panDown">↓</button>
+        <span></span>
+      </div>
+      <p class="hint">Клавиши: <b>W A S D</b> — движение, <b>+</b>/<b>-</b> — зум, <b>R</b> — сброс.</p>
+    </div>
+
+    <div id="legend">
+      <h2>Объекты</h2>
+      <ul>
+        <li><span class="dot human"></span>Люди</li>
+        <li><span class="dot animal"></span>Животные</li>
+        <li><span class="dot plant"></span>Растительность</li>
+        <li><span class="dot city"></span>Инфраструктура</li>
+        <li><span class="dot geology"></span>Неживая природа</li>
+      </ul>
+    </div>
+
+    <canvas id="scene"></canvas>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

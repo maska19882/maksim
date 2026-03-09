@@ -1,0 +1,76 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, #0f1730, #02040c 70%);
+}
+
+#scene { width: 100%; height: 100%; display: block; }
+
+#hud,
+#legend,
+#controlsPanel {
+  position: fixed;
+  z-index: 2;
+  backdrop-filter: blur(6px);
+  background: rgba(5, 8, 18, 0.72);
+  border: 1px solid rgba(130, 180, 255, 0.35);
+  border-radius: 14px;
+  padding: 12px 14px;
+  max-width: min(380px, 90vw);
+}
+
+#hud { top: 16px; left: 16px; }
+#controlsPanel { top: 16px; right: 16px; }
+#legend { right: 16px; bottom: 16px; }
+
+h1, h2 { margin: 0 0 8px; font-size: 1rem; }
+p { margin: 6px 0; line-height: 1.35; font-size: 0.9rem; }
+.hint { opacity: 0.82; font-size: 0.8rem; }
+
+.searchRow { display: flex; gap: 6px; margin: 8px 0 10px; }
+.searchRow input {
+  flex: 1;
+  min-width: 200px;
+  background: #0e1832;
+  border: 1px solid #4264ab;
+  color: #e8f1ff;
+  border-radius: 8px;
+  padding: 8px;
+}
+.searchRow button,
+.controlsGrid button {
+  background: #1a2d5f;
+  color: #eff4ff;
+  border: 1px solid #5f84da;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 8px 10px;
+}
+.searchRow button:hover,
+.controlsGrid button:hover { background: #264388; }
+
+.controlsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+ul { margin: 8px 0; padding: 0; list-style: none; }
+li { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 0.88rem; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+.human { background: #ffe08a; }
+.animal { background: #ffa7d6; }
+.plant { background: #88ef9c; }
+.city { background: #ffd26f; }
+.geology { background: #9aa7bf; }
